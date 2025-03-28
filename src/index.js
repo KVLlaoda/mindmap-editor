@@ -1,17 +1,17 @@
+// src/index.js
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { fixResizeObserverErrors } from './utils/resizeObserverPolyfill';
+
+// 应用 ResizeObserver 错误修复
+fixResizeObserverErrors();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  // 在开发环境中，React.StrictMode 会导致组件渲染两次，可能加剧 ResizeObserver 问题
+  // <React.StrictMode>
     <App />
-  </React.StrictMode>
+  // </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

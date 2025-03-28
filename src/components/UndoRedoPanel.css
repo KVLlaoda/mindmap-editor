@@ -1,0 +1,42 @@
+/* src/components/UndoRedoPanel.css */
+.undo-redo-panel {
+  display: flex;
+  padding: 12px 15px;
+  border-top: 1px solid #f0f0f0;
+  height: 60px;
+  min-height: 60px;
+  max-height: 60px;
+  background-color: #f9f9f9;
+}
+
+.undo-redo-panel button {
+  flex: 1;
+  margin: 0 5px;
+  padding: 8px 12px;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.undo-redo-panel button:hover:not(:disabled) {
+  background-color: #f5f5f5;
+  border-color: #d0d0d0;
+}
+
+.undo-redo-panel button:active:not(:disabled) {
+  transform: translateY(1px);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+.undo-redo-panel button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  background-color: #fafafa;
+}

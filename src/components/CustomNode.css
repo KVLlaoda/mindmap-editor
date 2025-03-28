@@ -1,0 +1,79 @@
+/* src/components/CustomNode.css */
+.custom-node {
+  padding: 12px 15px;
+  border-radius: 8px;
+  background: white;
+  border: 1px solid #ddd;
+  position: relative;
+  /* 最小尺寸 */
+  min-width: 120px;
+  min-height: 40px;
+  /* 避免内容变化引起尺寸计算 */
+  box-sizing: border-box;
+  /* 防止文字溢出 */
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  /* 确保节点在Z轴上高于连线 */
+  z-index: 10;
+}
+
+/* 根节点特殊样式 */
+.custom-node.root-node {
+  background: linear-gradient(to right, #4b6cb7, #6a85b6);
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.node-content {
+  font-size: 14px;
+  min-width: 100px;
+  min-height: 20px;
+  /* 避免文本溢出引起尺寸变化 */
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.node-actions {
+  position: absolute;
+  right: -5px;
+  top: -5px;
+  display: none;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  padding: 2px;
+}
+
+.custom-node:hover .node-actions {
+  display: flex;
+}
+
+.node-action-button {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: 14px;
+  border-radius: 4px;
+  margin: 0 1px;
+}
+
+.node-action-button:hover {
+  background-color: #f0f0f0;
+}
+
+.node-action-button.undo {
+  color: #4b6cb7;
+}
+
+.node-action-button.redo {
+  color: #6a85b6;
+}
